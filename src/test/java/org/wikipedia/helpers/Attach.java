@@ -63,6 +63,7 @@ public class Attach {
                 screenshotAs("Last screenshot");
                 pageSource();
                 attachVideo(sessionId,  Browserstack.videoUrl(sessionId));
+                closeWebDriver();
                 break;
             default:
                 screenshotAs("Last screenshot");
