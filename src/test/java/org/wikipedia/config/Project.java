@@ -12,4 +12,6 @@ public class Project {
     public static SelenoidConfig selenoidConfig =
             ConfigFactory.create(SelenoidConfig.class, System.getProperties());
 
+    public static HostConfig hostConfig =
+            ConfigFactory.create(HostConfig.class, System.getProperties());
 }
