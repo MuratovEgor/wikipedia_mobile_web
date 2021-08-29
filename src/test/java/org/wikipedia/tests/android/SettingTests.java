@@ -8,8 +8,7 @@ import org.wikipedia.tests.TestBase;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 @Tag("android")
@@ -18,12 +17,13 @@ public class SettingTests extends TestBase {
     @Test
     @DisplayName("Open the Settings screen")
     void openSettingScreen() {
-        step("Tap on the Menu button", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/menu_overflow_button")).click();
+        back();
+        step("Tap on the More button", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/menu_icon")).click();
         });
 
         step("Tap on the Setting button", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/explore_overflow_settings")).click();
+            $(MobileBy.id("org.wikipedia.alpha:id/main_drawer_settings_container")).click();
         });
 
         step("Verify that have navigated to the Setting screen", () -> {

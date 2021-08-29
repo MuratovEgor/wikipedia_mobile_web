@@ -5,6 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.wikipedia.drivers.AppiumMobileDriver;
 import org.wikipedia.drivers.BrowserStackMobileDriver;
 import org.wikipedia.helpers.Attach;
 
@@ -20,7 +21,7 @@ public class TestBase {
     public static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
 
-        Configuration.browser = BrowserStackMobileDriver.class.getName();
+        Configuration.browser = AppiumMobileDriver.class.getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
         Configuration.timeout = 10000;
