@@ -18,7 +18,7 @@ public interface AppiumConfig extends Config {
     @Key("device")
     String getDevice();
 
-    @Key("platform.version")
+    @Key("android.version")
     String getPlatformVersion();
 
     @Key("platform.locale")

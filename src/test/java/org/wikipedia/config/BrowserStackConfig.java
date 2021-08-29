@@ -27,7 +27,7 @@ public interface BrowserStackConfig extends Config {
     @Key("device")
     String getBrowserDevice();
 
-    @Key("platform.version")
+    @Key("android.version")
     String getBrowserPlatformVersion();
 
     @Key("app")
