@@ -9,4 +9,7 @@ public class Project {
     public static AppiumConfig appiumConfig =
             ConfigFactory.create(AppiumConfig.class, System.getProperties());
 
+    public static SelenoidConfig selenoidConfig =
+            ConfigFactory.create(SelenoidConfig.class, System.getProperties());
+
 }
