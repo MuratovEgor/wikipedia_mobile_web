@@ -1,6 +1,5 @@
 package org.wikipedia.tests.web;
 
-import com.codeborne.selenide.Condition;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
@@ -10,7 +9,8 @@ import org.wikipedia.annotations.Layer;
 import org.wikipedia.tests.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @Owner("egor.muratov")
@@ -20,7 +20,7 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
     @Test
-    @DisplayName("Successful search in wikipedia android app")
+    @DisplayName("Successful search in wikipedia.org")
     void searchTest() {
         step("Open url https://en.wikipedia.org/wiki/Main_Page", () -> {
             open("https://en.wikipedia.org/wiki/Main_Page");
@@ -30,11 +30,9 @@ public class SearchTests extends TestBase {
             $("#searchInput").val("Harry Potter").pressEnter();
         });
 
-        step("Check that the title of the article is Harry Potter", ()->{
+        step("Check that the title of the article is Harry Potter", () -> {
             $("#firstHeading").shouldHave(text("Harry Potter"));
         });
-
-
 
 
     }

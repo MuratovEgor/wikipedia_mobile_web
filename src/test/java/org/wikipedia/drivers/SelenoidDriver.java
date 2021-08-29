@@ -16,10 +16,7 @@ public class SelenoidDriver {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
-        Configuration.remote = String.format(
-                Project.selenoidConfig.getSelenoidUrl(),
-                Project.selenoidConfig.getSelenoidUserName(),
-                Project.selenoidConfig.getSelenoidUserPassword());
+        Configuration.remote = Project.selenoidConfig.getSelenoidUrl();
 
         Configuration.browserCapabilities = capabilities;
     }

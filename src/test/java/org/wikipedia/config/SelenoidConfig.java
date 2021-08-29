@@ -14,12 +14,6 @@ public interface SelenoidConfig extends Config {
     @Key("url")
     String getSelenoidUrl();
 
-    @Key("username")
-    String getSelenoidUserName();
-
-    @Key("password")
-    String getSelenoidUserPassword();
-
     @Key("selenoid.video.storage")
     String getSelenoidVideoStorage();
 
