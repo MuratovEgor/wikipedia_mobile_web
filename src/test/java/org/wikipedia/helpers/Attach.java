@@ -5,9 +5,12 @@ import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.wikipedia.config.Project;
 
 import java.nio.charset.StandardCharsets;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.getWebDriverLogs;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
@@ -28,9 +31,9 @@ public class Attach {
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-    public static String attachVideo(String sessionId) {
+    public static String attachVideo(String sessionId, String url) {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + Browserstack.videoUrl(sessionId)
+                + url
                 + "' type='video/mp4'></video></body></html>";
     }
 
@@ -41,7 +44,31 @@ public class Attach {
     public static void browserConsoleLogs() {
         attachAsText(
                 "Browser console logs",
-                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
+                String.join("\n", getWebDriverLogs(BROWSER))
         );
+    }
+
+    public static void addAttachments(String driver) {
+        String sessionId;
+        switch(driver) {
+            case "selenoid":
+                sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+                screenshotAs("Last screenshot");
+                pageSource();
+                attachVideo(sessionId, Project.selenoidConfig.getSelenoidVideoStorage() + sessionId + ".mp4");
+                browserConsoleLogs();
+                break;
+            case "browserstack":
+                sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+                screenshotAs("Last screenshot");
+                pageSource();
+                attachVideo(sessionId,  Browserstack.videoUrl(sessionId));
+                break;
+            default:
+                screenshotAs("Last screenshot");
+                pageSource();
+                closeWebDriver();
+                break;
+        }
     }
 }
