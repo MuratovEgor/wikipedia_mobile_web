@@ -51,14 +51,14 @@ public class Attach {
     public static void addAttachments(String driver) {
         String sessionId;
         switch(driver) {
-            case "selenoid":
+            case "SelenoidDriver":
                 sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
                 screenshotAs("Last screenshot");
                 pageSource();
                 attachVideo(sessionId, Project.selenoidConfig.getSelenoidVideoStorage() + sessionId + ".mp4");
                 browserConsoleLogs();
                 break;
-            case "browserstack":
+            case "BrowserStackDriver":
                 sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
                 screenshotAs("Last screenshot");
                 pageSource();

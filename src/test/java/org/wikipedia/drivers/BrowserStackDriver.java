@@ -10,7 +10,7 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BrowserStackMobileDriver implements WebDriverProvider {
+public class BrowserStackDriver implements WebDriverProvider {
     private static URL getBrowserstackUrl() {
         try {
             return new URL(

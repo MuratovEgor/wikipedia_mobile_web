@@ -10,7 +10,7 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AppiumMobileDriver implements WebDriverProvider {
+public class AppiumDriver implements WebDriverProvider {
     private static URL getAppiumUrl() {
         try {
             return new URL(
