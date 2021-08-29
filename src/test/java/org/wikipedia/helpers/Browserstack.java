@@ -15,6 +15,7 @@ public class Browserstack {
                 .auth().basic(config.getBrowserStackUser(), config.getBrowserStackKey())
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId + ".json")
+
                 .then()
                 .statusCode(200)
                 .log().body()

@@ -41,4 +41,7 @@ public interface BrowserStackConfig extends Config {
 
     @Key("name")
     String getBrowserStackName();
+
+    @Key("app.url")
+    String getAppUrl();
 }
