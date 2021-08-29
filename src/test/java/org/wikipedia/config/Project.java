@@ -6,4 +6,7 @@ public class Project {
     public static BrowserStackConfig browserStackConfig =
             ConfigFactory.create(BrowserStackConfig.class, System.getProperties());
 
+    public static AppiumConfig appiumConfig =
+            ConfigFactory.create(AppiumConfig.class, System.getProperties());
+
 }
