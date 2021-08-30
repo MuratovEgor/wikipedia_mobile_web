@@ -1,9 +1,12 @@
 package org.wikipedia.tests.android;
 
 import io.appium.java_client.MobileBy;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.wikipedia.annotations.Layer;
 import org.wikipedia.tests.TestBase;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -11,6 +14,9 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 @Tag("android")
+@Owner("egor.muratov")
+@Layer("mobile")
+@Feature("Search")
 public class SearchTests extends TestBase {
 
     @Test

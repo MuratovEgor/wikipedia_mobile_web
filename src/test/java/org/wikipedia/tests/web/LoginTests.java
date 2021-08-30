@@ -5,11 +5,9 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.wikipedia.annotations.Layer;
 import org.wikipedia.tests.TestBase;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -24,15 +22,15 @@ public class LoginTests extends TestBase {
     @DisplayName("Unsuccessful login")
     void unsuccessfulLogin() {
         step("Open url Login Page", () ->
-            open("https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page")
+                open("https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page")
         );
 
         step("Type test in Login field", () ->
-            $("#wpName1").val("test")
+                $("#wpName1").val("test")
         );
 
         step("Type test in Password field", () ->
-            $("#wpPassword1").val("test")
+                $("#wpPassword1").val("test")
         );
 
         step("Click button Log in", () ->
@@ -40,7 +38,7 @@ public class LoginTests extends TestBase {
         );
 
         step("Check that block Error is visible", () ->
-            $(".errorbox").shouldBe(visible)
+                $(".errorbox").shouldBe(visible)
         );
 
 
