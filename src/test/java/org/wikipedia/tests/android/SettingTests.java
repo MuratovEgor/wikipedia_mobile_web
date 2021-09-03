@@ -6,6 +6,8 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.wikipedia.annotations.JiraIssue;
+import org.wikipedia.annotations.JiraIssues;
 import org.wikipedia.annotations.Layer;
 import org.wikipedia.tests.TestBase;
 
@@ -22,6 +24,7 @@ public class SettingTests extends TestBase {
 
     @Test
     @DisplayName("Open the Settings screen")
+    @JiraIssues({@JiraIssue("HOM-232")})
     void openSettingScreen() {
         back();
         step("Tap on the More button", () -> {

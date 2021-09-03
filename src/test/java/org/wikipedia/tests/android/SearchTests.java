@@ -6,6 +6,8 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.wikipedia.annotations.JiraIssue;
+import org.wikipedia.annotations.JiraIssues;
 import org.wikipedia.annotations.Layer;
 import org.wikipedia.tests.TestBase;
 
@@ -21,6 +23,7 @@ public class SearchTests extends TestBase {
 
     @Test
     @DisplayName("Successful search in wikipedia android app")
+    @JiraIssues({@JiraIssue("HOM-232")})
     void searchTest() {
         back();
         step("Enter Harry Potter into the search bar", () -> {

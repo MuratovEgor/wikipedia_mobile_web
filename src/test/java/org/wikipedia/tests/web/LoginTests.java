@@ -5,6 +5,8 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.wikipedia.annotations.JiraIssue;
+import org.wikipedia.annotations.JiraIssues;
 import org.wikipedia.annotations.Layer;
 import org.wikipedia.tests.TestBase;
 
@@ -20,6 +22,7 @@ import static io.qameta.allure.Allure.step;
 public class LoginTests extends TestBase {
     @Test
     @DisplayName("Unsuccessful login")
+    @JiraIssues({@JiraIssue("HOM-232")})
     void unsuccessfulLogin() {
         step("Open url Login Page", () ->
                 open("https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page")
