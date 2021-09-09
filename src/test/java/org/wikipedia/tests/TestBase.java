@@ -19,7 +19,7 @@ public class TestBase {
     @BeforeAll
     public static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
-        if (Objects.equals(Project.hostConfig.getDriver(), "SelenoidDriver")) {
+        if (Objects.equals(Project.hostConfig.getDriver(), "WebDriver")) {
             WebDriver.configure();
         } else {
             Configuration.browser = "org.wikipedia.drivers." + Project.hostConfig.getDriver();
