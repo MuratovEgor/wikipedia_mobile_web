@@ -32,7 +32,7 @@ public class SearchTests extends TestBase {
         });
         step("Verify content found", () ->
                 $$(MobileBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(sizeGreaterThan(0)));
+                        .shouldHave(sizeGreaterThan(0))
+        );
     }
-
 }

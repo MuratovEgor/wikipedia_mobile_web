@@ -27,17 +27,14 @@ public class SettingTests extends TestBase {
     @JiraIssues({@JiraIssue("HOM-232")})
     void openSettingScreen() {
         back();
-        step("Tap on the More button", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/menu_icon")).click();
-        });
-
-        step("Tap on the Setting button", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/main_drawer_settings_container")).click();
-        });
-
-        step("Verify that have navigated to the Setting screen", () -> {
-            $(MobileBy.className("android.widget.TextView")).shouldHave(text("Setting"));
-        });
-
+        step("Tap on the More button", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/menu_icon")).click()
+        );
+        step("Tap on the Setting button", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/main_drawer_settings_container")).click()
+        );
+        step("Verify that have navigated to the Setting screen", () ->
+                $(MobileBy.className("android.widget.TextView")).shouldHave(text("Setting"))
+        );
     }
 }

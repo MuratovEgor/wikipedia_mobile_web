@@ -4,21 +4,16 @@ import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.wikipedia.config.Project;
 
-public class SelenoidDriver {
+public class WebDriver {
 
     public static void configure() {
-        Configuration.browserVersion = Project.selenoidConfig.getBrowserVersion();
-        Configuration.browser = Project.selenoidConfig.getBrowser();
-        Configuration.browserSize = Project.selenoidConfig.getBrowserSize();
-
+        Configuration.browserVersion = Project.webConfig.getBrowserVersion();
+        Configuration.browser = Project.webConfig.getBrowser();
+        Configuration.browserSize = Project.webConfig.getBrowserSize();
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-
-        Configuration.remote = Project.selenoidConfig.getSelenoidUrl();
-
+        Configuration.remote = Project.webConfig.getSelenoidUrl();
         Configuration.browserCapabilities = capabilities;
     }
-
 }

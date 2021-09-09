@@ -27,24 +27,9 @@ public class LoginTests extends TestBase {
         step("Open url Login Page", () ->
                 open("https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page")
         );
-
-        step("Type test in Login field", () ->
-                $("#wpName1").val("test")
-        );
-
-        step("Type test in Password field", () ->
-                $("#wpPassword1").val("test")
-        );
-
-        step("Click button Log in", () ->
-                $("#wpLoginAttempt").click()
-        );
-
-        step("Check that block Error is visible", () ->
-                $(".errorbox").shouldBe(visible)
-        );
-
-
+        step("Type test in Login field", () -> $("#wpName1").val("test"));
+        step("Type test in Password field", () -> $("#wpPassword1").val("test"));
+        step("Click button Log in", () -> $("#wpLoginAttempt").click());
+        step("Check that block Error is visible", () -> $(".errorbox").shouldBe(visible));
     }
-
 }

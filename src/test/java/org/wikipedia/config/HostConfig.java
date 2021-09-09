@@ -1,4 +1,5 @@
 package org.wikipedia.config;
+
 import org.aeonbits.owner.Config;
 
 import static org.aeonbits.owner.Config.LoadType.MERGE;

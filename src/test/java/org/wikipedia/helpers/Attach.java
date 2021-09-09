@@ -1,6 +1,5 @@
 package org.wikipedia.helpers;
 
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -50,19 +49,19 @@ public class Attach {
 
     public static void addAttachments(String driver) {
         String sessionId;
-        switch(driver) {
-            case "SelenoidDriver":
+        switch (driver) {
+            case "WebDriver":
                 sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
                 screenshotAs("Last screenshot");
                 pageSource();
-                attachVideo(sessionId, Project.selenoidConfig.getSelenoidVideoStorage() + sessionId + ".mp4");
+                attachVideo(sessionId, Project.webConfig.getSelenoidVideoStorage() + sessionId + ".mp4");
                 browserConsoleLogs();
                 break;
             case "BrowserStackDriver":
                 sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
                 screenshotAs("Last screenshot");
                 pageSource();
-                attachVideo(sessionId,  Browserstack.videoUrl(sessionId));
+                attachVideo(sessionId, Browserstack.videoUrl(sessionId));
                 closeWebDriver();
                 break;
             default:

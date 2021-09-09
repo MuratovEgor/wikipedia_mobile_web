@@ -7,10 +7,10 @@ import static org.aeonbits.owner.Config.LoadType.MERGE;
 @Config.LoadPolicy(MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/selenoid.properties"
+        "classpath:config/web.properties"
 })
 
-public interface SelenoidConfig extends Config {
+public interface WebConfig extends Config {
     @Key("url")
     String getSelenoidUrl();
 
