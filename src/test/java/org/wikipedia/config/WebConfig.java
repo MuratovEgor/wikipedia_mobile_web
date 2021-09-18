@@ -20,10 +20,10 @@ public interface WebConfig extends Config {
     @Key("browser")
     String getBrowser();
 
-    @Key("browserVersion")
+    @Key("browser.version")
     String getBrowserVersion();
 
-    @Key("browserSize")
+    @Key("browser.size")
     String getBrowserSize();
 
 }

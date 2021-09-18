@@ -18,9 +18,6 @@ public interface BrowserStackConfig extends Config {
     @Key("key")
     String getBrowserStackKey();
 
-    @Key("api.url")
-    String getBrowserStackApiUrl();
-
     @Key("url")
     String getBrowserStackUrl();
 

@@ -1,6 +1,5 @@
 package org.wikipedia.helpers;
 
-
 import org.aeonbits.owner.ConfigFactory;
 import org.wikipedia.config.BrowserStackConfig;
 
